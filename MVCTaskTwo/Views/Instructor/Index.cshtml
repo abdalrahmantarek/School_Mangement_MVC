@@ -1,0 +1,53 @@
+﻿@model List<Instructor>
+        <div asp-validation-summary="All"></div>
+    <table class="table-bordered table-hover" width="50%" >
+        <thead>
+            <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Salary
+            </th>
+            <th>
+                Edit
+            </th>
+            </tr>
+        </thead>
+    
+        @foreach (var item in Model)
+    {
+        <tbody>
+           <tr>
+               <td>
+                   @item.ID
+               </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.Salary
+                </td>
+                <td>
+                    <a href="\Instructor\Edit\@item.ID" class="btn btn-success">Edit</a>
+                </td>
+                <td>
+                    <a href="\Instructor\Delete\@item.ID" class="btn btn-success">Delete</a>
+                </td>
+
+            </tr>
+        </tbody>
+        
+    }
+    </table>
+
+    <a href="\Instructor\Add" class="link-primary" > Add New Instractour </a>

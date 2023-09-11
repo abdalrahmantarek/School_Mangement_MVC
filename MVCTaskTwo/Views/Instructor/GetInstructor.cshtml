@@ -1,0 +1,36 @@
+﻿@model Instructor
+
+<table class="table-bordered table-hover" width="50%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Salary
+            </th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Model.ID
+                </td>
+                <td>
+                    @Model.Name
+                </td>
+                <td>
+                    @Model.Address
+                </td>
+                <td>
+                @Model.Salary
+                </td>
+            </tr>
+        </tbody>
+</table>

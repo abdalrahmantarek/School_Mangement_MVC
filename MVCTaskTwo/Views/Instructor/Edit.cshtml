@@ -1,0 +1,37 @@
+﻿@model Instructor
+@{
+    var depts = new SelectList(ViewBag.Dept, "ID", "Name", Model.Dept_ID);
+}
+<form asp-action="SaveEdit" asp-controller="Instructor" asp-route-ID="@Model.ID" class="form">
+    <div>
+        <label asp-for="Name"> </label>
+        <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" class="form-control"  />
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+    <div>
+        <label asp-for="Salary" class="form-label"></label>
+        <input  asp-for=Salary class="form-control"/>
+        <span asp-validation-for="Salary" class="text-danger"></span>
+
+    </div>
+    <div class="pt-2">
+        <label class="form-label" asp-for="Dept_ID"></label>
+        <select asp-for=Dept_ID asp-items="depts" class="form-select form-select-lg mb-3">
+           
+        </select>
+        
+
+    </div>
+    <div class="pt-2">
+        <input type="submit" class="btn btn-primary " />
+    </div>
+</form>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
